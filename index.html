@@ -2,42 +2,113 @@
 <html>
 <head>
     <title>Clothing Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #cart-count {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>My Clothing Store</h1>
+    <header>
+        <h1>My Clothing Store</h1>
+        <div>Cart: <span id="cart-count">0</span></div>
+    </header>
 
     <div class="products">
         <div class="product">
             <img src="T shirt .png" alt="T-Shirt">
             <h3>Basic T-Shirt</h3>
             <p>Price: $15</p>
-            <button>Add to Cart</button>
+            <button onclick="addToCart()">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="Screenshot 2025-10-08 133047.png" alt="Jeans">
             <h3>Blue Jeans</h3>
             <p>Price: $40</p>
-            <button>Add to Cart</button>
+            <button onclick="addToCart()">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="Screenshot 2025-10-08 132958.png" alt="Jacket">
             <h3>Leather Jacket</h3>
             <p>Price: $80</p>
-            <button>Add to Cart</button>
+            <button onclick="addToCart()">Add to Cart</button>
         </div>
 
         <div class="product">
             <img src="Screenshot 2025-10-08 133130.png" alt="Sneakers">
             <h3>Running Sneakers</h3>
             <p>Price: $50</p>
-            <button>Add to Cart</button>
+            <button onclick="addToCart()">Add to Cart</button>
         </div>
     </div>
 
+    <script>
+        let cart = 0;
+        function addToCart() {
+            cart++;
+            document.getElementById('cart-count').textContent = cart;
+        }
+    </script>
+
 </body>
 </html>
-
-
